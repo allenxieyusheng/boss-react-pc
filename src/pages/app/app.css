@@ -1,0 +1,142 @@
+.s1{
+    width : 100%;
+    min-width: 960px;
+    overflow: hidden;
+    position: relative;
+    height: 750px;
+    background-color: #63d5c9;
+    background: #62d5c8 url(../../images/down2.png) center bottom no-repeat;
+}
+
+.down-wrap{
+    /* background-color: red; */
+    width: 90%;
+    margin: auto;
+    min-width: 900px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.down-right h1{
+    margin-bottom: 5px;
+    font-weight:bold;
+    color: #fff;
+    font-size: 50px;
+}
+.down-right h2{
+    margin: 0px;
+    color: #f5f7f9;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.down-right{
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.wechart-wrap{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.button-wrap{
+    display: flex;
+    flex-direction: column;
+}
+.button-wrap{
+    width: 200px;
+}
+.button {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    color: #777;
+
+}
+.wechart{
+    width: 120px;
+    height: 120px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+.app-home{
+    width: 400px;
+}
+
+#softwareUsingWays-container{
+    height: 500px;
+    /* background-color: */
+    padding: 20px;
+}
+
+.pay-left{
+    float: left;
+    width: 40%;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    transform: translateX(-100px);
+}
+.pay-right{
+    float: right;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transform: translateX(100px);
+}
+
+.pay-left h1{
+    font-size: 40px;
+}
+.pay-left h1 span{
+    color: #63d5c9;
+}
+.pay-left  h5{
+    margin-top: 0px;
+    color: #999
+}
+
+.pay-right img{
+    width: 260px;
+}
+
+
+
+/* //动画 */
+@keyframes showLeft {
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+  @keyframes showRight {
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+  @keyframes hideLeft {
+    to {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+  }
+  @keyframes hideRight {
+    to {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+  }
