@@ -1,3 +1,4 @@
+
 .s1{
     width : 100%;
     min-width: 960px;
@@ -79,6 +80,7 @@
 }
 
 .pay-left{
+    overflow: hidden;
     float: left;
     width: 40%;
     display: flex;
@@ -89,13 +91,14 @@
     transform: translateX(-100px);
 }
 .pay-right{
+    overflow: hidden;
     float: right;
     width: 40%;
     height: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    transform: translateX(100px);
+    transform:scale(0)
 }
 
 .pay-left h1{
@@ -125,7 +128,7 @@
   @keyframes showRight {
     to {
       opacity: 1;
-      transform: translateX(0px);
+      transform:scale(1)
     }
   }
   @keyframes hideLeft {

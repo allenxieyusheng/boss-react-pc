@@ -1,17 +1,15 @@
 /**
  * @description 路由管理
 */
-
-
-// import APP  from "../index";
-
-
-// const routes = {
-//     path: '/',
-//     component: App,
-//     childRoutes: [
-//       { path: 'about', component: About },
-//       { path: 'inbox', component: Inbox },
-//     ]
-// }
+import Home from '../pages/home/home'
+import APP  from '../pages/app/app'
+import { Router, Route, Link } from 'react-router'
+const routes = {
+    path: '/',
+    component: Home,
+    childRoutes: [
+        { path: 'app', component: APP },
+      ]
+}
+export default routes
   
