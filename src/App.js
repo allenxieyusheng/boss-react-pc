@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'antd';
+import { Button,Empty } from 'antd';
 import { BrowserRouter, Link, Route, Switch, Redirect,} from "react-router-dom";
 
 import HOME from './pages/home/home'
@@ -10,7 +10,9 @@ import Footer from './components/footer/footer'
 
 const NoMatch = ()=>{
   return(
-    <div>404</div>
+    <div style={{display:"flex",flex:1,justifyContent:"center"}}>
+      <img src={require('./images/404.png')}/>
+    </div>
   )
 }
 
