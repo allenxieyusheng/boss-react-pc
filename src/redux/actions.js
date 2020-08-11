@@ -1,4 +1,4 @@
-export const puls ={
-    type:'jia'
+export const plus ={
+    type:'plus'
 }
 
