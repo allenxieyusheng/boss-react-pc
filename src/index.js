@@ -52,7 +52,7 @@ class Root extends React.Component{
   render(){
     return(
       <div>
-          <span>{this.state.count}</span>
+          <span>{this.state.count.num}</span>
           <button onClick={()=>this.clickPlus()}>点击</button>
           <App/>
       </div>

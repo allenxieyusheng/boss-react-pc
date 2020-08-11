@@ -9,11 +9,6 @@ import { Layout, Menu, Breadcrumb, SubMenu} from 'antd';
 const { Header, Content, Footer,Sider,} = Layout;
 
 
-
-// import { Router, Route, Link } from 'react-router'
-
-
-
 const mapStateToProps = state => { return {
     count: state,
   };
@@ -22,8 +17,17 @@ const mapDispatchToProps = {
   add: () => {
   return { type: "plus" };
 },
+
 minus: () => {
-  return { type: "minus" }},
+  return { type: "minus" }
+ },
+
+addAync:() => dispatch => {
+  setTimeout(() => {
+      // 异步结束后，⼿手动执⾏行行dispatch
+      dispatch({ type: "plus" }); 
+    }, 1000);
+  }
 }
 
 @connect(mapStateToProps,mapDispatchToProps)
@@ -37,12 +41,17 @@ class Home extends React.Component{
   }
   
   render(){
-    const { count ,add} = this.props;
+    const { count ,add,addAync} = this.props;
+
+    console.log("-----------------",count);
+    const {num} = count
+
     return(
       <Layout>
         <div className="fast-boss"> 
-          <span>{count}</span>
+          <span>{num}</span>
           <button onClick={add}>点击2</button>
+          <button onClick={addAync}>异步</button>
         </div>        
       </Layout>
     )
