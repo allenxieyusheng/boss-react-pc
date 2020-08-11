@@ -5,13 +5,60 @@ import App from './App.js'
 import * as serviceWorker from './serviceWorker';
 
 import { BrowserRouter} from "react-router-dom";
+import {Provider} from 'react-redux';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App/>
-    </BrowserRouter>
-  </React.StrictMode>,
+
+import store from './redux/store'
+import { render } from '@testing-library/react';
+
+
+const witiRoot = Component => props =>{
+  return(
+    <React.StrictMode>
+      <BrowserRouter>
+        <Provider store={store}>
+          <Component {...props}/>
+        </Provider>
+      </BrowserRouter>
+  </React.StrictMode>
+  )
+}
+
+@witiRoot
+class Root extends React.Component{
+  componentDidMount(){
+    //监听,每次更新后都会触发监听,这里注意this指向问题
+    store.subscribe(()=>this.listener())
+    
+  }
+  listener(){
+    const current = store.getState();
+    this.setState({
+      count:current
+    })
+  }
+  constructor(props){
+    super(props);
+    this.state={
+      count:store.getState()
+    }
+  }
+  clickPlus(){
+    store.dispatch({type:'plus'})
+  }
+  render(){
+    return(
+      <div>
+          {/* <span>{this.state.count}</span>
+          <button onClick={()=>this.clickPlus()}>点击</button> */}
+          <App/>
+      </div>
+    )
+  }
+}
+
+
+ReactDOM.render(<Root/>,
   document.getElementById('root')
 );
 serviceWorker.unregister();
